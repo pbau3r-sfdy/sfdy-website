@@ -17,12 +17,6 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title === 'Starflight Dynamics' ? title : `${title} · Starflight Dynamics`}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
-      rel="stylesheet"
-    />
     <link rel="icon" type="image/png" href="/favicon.png" />
   </head>
   <body>
@@ -31,6 +25,14 @@ const {
 </html>
 
 <style is:global>
+  @font-face {
+    font-family: 'Avenir Next';
+    src: url('/fonts/avenir-next-bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -43,8 +45,8 @@ const {
     --accent:      #3dffa0;
     --accent-dim:  rgba(61, 255, 160, 0.12);
     --radius:      8px;
-    --font-head:   'DM Sans', sans-serif;
-    --font-body:   'DM Sans', sans-serif;
+    --font-head:   'Avenir Next', 'Avenir', 'DM Sans', sans-serif;
+    --font-body:   'Avenir Next', 'Avenir', 'DM Sans', sans-serif;
   }
 
   html { scroll-behavior: smooth; }
