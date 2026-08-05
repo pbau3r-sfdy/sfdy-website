@@ -1,0 +1,237 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Starflight Dynamics" description="High-mobility orbital systems and sovereign applications.">
+  <Nav />
+
+  <!-- HERO: dark space bg + astronaut illustration + green text -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <img src="/images/astronaut.svg" alt="" class="hero-astronaut" aria-hidden="true" />
+      <p class="hero-label">CURRENTLY UNDER</p>
+      <p class="hero-label construction">CONSTRUCTION</p>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section" id="updates">
+    <div class="newsletter-left">
+      <div class="section-label">#SFDY-UPDATES</div>
+      <p class="newsletter-tagline">Stay in the loop.</p>
+    </div>
+    <div class="newsletter-right">
+      <p class="newsletter-desc">For our Newsletter, please subscribe here:</p>
+      <form
+        class="newsletter-form"
+        action="https://formspree.io/f/placeholder"
+        method="POST"
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          aria-label="Email address"
+        />
+        <button type="submit">SIGN UP</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ECOSYSTEM PARTNERS -->
+  <section class="partners-section">
+    <div class="partners-logos">
+      <img src="/images/partners/bavairia.png" alt="bavAIRia" />
+      <img src="/images/partners/bdli.png" alt="BDLI" />
+      <img src="/images/partners/newspace.png" alt="NewSpace BDI Initiative" />
+    </div>
+  </section>
+
+  <!-- EARTH FROM ORBIT (full-bleed visual before footer) -->
+  <div class="earth-section" aria-hidden="true"></div>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/hero-space-bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+    padding: 5rem 2rem 3rem;
+  }
+
+  .hero-astronaut {
+    width: clamp(200px, 35vw, 380px);
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-label {
+    font-family: var(--font-head);
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.05;
+    color: var(--text);
+    text-transform: uppercase;
+  }
+  .hero-label.construction { color: var(--accent); }
+
+  /* NEWSLETTER */
+  .newsletter-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    padding: 5rem clamp(2rem, 8vw, 8rem);
+    background: #ffffff;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .newsletter-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .section-label {
+    font-family: var(--font-head);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #222;
+  }
+
+  .newsletter-tagline {
+    font-family: var(--font-head);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    color: #111;
+    line-height: 1.15;
+  }
+
+  .newsletter-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .newsletter-desc {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .newsletter-form input {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    color: #111;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    padding: 0.65rem 1rem;
+    width: 220px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .newsletter-form input::placeholder { color: #999; }
+  .newsletter-form input:focus { border-color: #384AD3; }
+
+  .newsletter-form button {
+    background: #384AD3;
+    border: none;
+    border-radius: var(--radius);
+    color: #fff;
+    cursor: pointer;
+    font-family: var(--font-head);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 0.65rem 1.5rem;
+    transition: opacity 0.2s;
+  }
+  .newsletter-form button:hover { opacity: 0.85; }
+
+  @media (max-width: 700px) {
+    .newsletter-section { flex-direction: column; gap: 2rem; }
+  }
+
+  /* PARTNERS */
+  .partners-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 5rem 2rem;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+  }
+
+  .partners-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem 4rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .partners-logos img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .partners-logos img:hover { opacity: 1; }
+
+  /* EARTH FROM ORBIT */
+  .earth-section {
+    width: 100%;
+    height: 480px;
+    background-image: url('/images/earth-bg.jpg');
+    background-size: cover;
+    background-position: center top;
+  }
+</style>
