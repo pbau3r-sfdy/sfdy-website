@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const b = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout title="Privacy Policy" description="Privacy policy and data protection information for Starflight Dynamics GmbH.">
@@ -59,7 +61,7 @@ import Footer from '../components/Footer.astro';
       <p>Please contact us if you wish to know which kind of data of yours we store and/or if you want to have it amended or deleted. Moreover, you have the right of processing restriction (Art. 18 of the GDPR), opposition to processing (Art. 21 of the GDPR) and data portability (Art. 20 of the GDPR).</p>
 
       <h2>Right of opposition</h2>
-      <p>If your personal data is processed for a legitimate interest according to Art. 6 Par. 1-1-f) of the GDPR, you have the right to oppose the processing of your personal data according to Art. 21 of the GDPR. Please send us an e-mail (see <a href="/imprint">Imprint</a>) in order to exercise your right of withdrawal or opposition.</p>
+      <p>If your personal data is processed for a legitimate interest according to Art. 6 Par. 1-1-f) of the GDPR, you have the right to oppose the processing of your personal data according to Art. 21 of the GDPR. Please send us an e-mail (see <a href={`${b}/imprint`}>Imprint</a>) in order to exercise your right of withdrawal or opposition.</p>
 
       <h2>Data safety</h2>
       <p>We have implemented all the appropriate technical and administrative safety measures to protect your personal data against loss, destruction, manipulation, and unauthorized access. All of our employees and suppliers are bound by data protection laws. Whenever we collect and process any pieces of personal data, we encrypt them before transmitting them.</p>

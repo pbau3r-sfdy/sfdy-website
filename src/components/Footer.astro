@@ -1,11 +1,12 @@
 ---
+const b = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <footer class="footer">
   <div class="footer-tagline">SEE YOU UP THERE!</div>
 
   <div class="footer-logo">
-    <img src="/images/logo.png" alt="Starflight Dynamics" class="footer-logo-img" />
+    <img src={`${b}/images/logo.png`} alt="Starflight Dynamics" class="footer-logo-img" />
   </div>
 
   <div class="footer-socials">
@@ -27,9 +28,9 @@
   </div>
 
   <nav class="footer-nav">
-    <a href="/">HOME</a>
-    <a href="/privacy-policy">PRIVACY POLICY</a>
-    <a href="/imprint">IMPRINT</a>
+    <a href={`${b}/`}>HOME</a>
+    <a href={`${b}/privacy-policy`}>PRIVACY POLICY</a>
+    <a href={`${b}/imprint`}>IMPRINT</a>
   </nav>
 
   <p class="footer-copy">© {new Date().getFullYear()} Starflight Dynamics GmbH. All rights reserved.</p>
