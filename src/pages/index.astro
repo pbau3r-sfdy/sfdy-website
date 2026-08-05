@@ -9,9 +9,21 @@ const b = import.meta.env.BASE_URL.replace(/\/$/, '');
 <Layout title="Starflight Dynamics" description="High-mobility orbital systems and sovereign applications.">
   <Nav />
 
-  <!-- HERO: video background -->
+  <!-- HERO: video background with static poster fallback -->
   <section class="hero">
-    <div class="hero-bg" style={`background-image: url('${b}/images/hero-space-bg.jpg')`}></div>
+    <div class="hero-bg">
+      <video
+        class="hero-video"
+        autoplay
+        loop
+        muted
+        playsinline
+        poster={`${b}/images/hero-space-bg.jpg`}
+      >
+        <source src={`${b}/videos/hero-video.mp4`} type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
     <div class="hero-content">
       <img src={`${b}/images/astronaut.svg`} alt="" class="hero-astronaut" aria-hidden="true" />
     </div>
@@ -71,8 +83,18 @@ const b = import.meta.env.BASE_URL.replace(/\/$/, '');
   .hero-bg {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
+  }
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
   }
   .hero-bg::after {
     content: '';

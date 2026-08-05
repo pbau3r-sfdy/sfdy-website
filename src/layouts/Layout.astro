@@ -10,7 +10,10 @@ const {
 } = Astro.props;
 
 const b = import.meta.env.BASE_URL.replace(/\/$/, '');
-const fontFaceCSS = `@font-face{font-family:'Avenir Next';src:url('${b}/fonts/avenir-next-bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap;}`;
+const fontFaceCSS = `
+  @font-face{font-family:'Avenir LT';src:url('${b}/fonts/avenir-lt-light.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Avenir LT';src:url('${b}/fonts/avenir-lt-heavy.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap;}
+`;
 ---
 
 <!doctype html>
@@ -41,8 +44,8 @@ const fontFaceCSS = `@font-face{font-family:'Avenir Next';src:url('${b}/fonts/av
     --accent:      #3dffa0;
     --accent-dim:  rgba(61, 255, 160, 0.12);
     --radius:      8px;
-    --font-head:   'Avenir Next', 'Avenir', 'DM Sans', sans-serif;
-    --font-body:   'Avenir Next', 'Avenir', 'DM Sans', sans-serif;
+    --font-head:   'Avenir LT', 'Avenir Next', 'Avenir', sans-serif;
+    --font-body:   'Avenir LT', 'Avenir Next', 'Avenir', sans-serif;
   }
 
   html { scroll-behavior: smooth; }
