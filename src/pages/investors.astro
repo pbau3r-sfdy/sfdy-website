@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const b = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout title="Investors" description="Investor information for Starflight Dynamics.">
@@ -9,7 +11,7 @@ import Footer from '../components/Footer.astro';
 
   <!-- HERO: rocket launch photo -->
   <section class="investors-hero">
-    <div class="hero-bg"></div>
+    <div class="hero-bg" style={`background-image: url('${b}/images/investors-bg.jpg')`}></div>
   </section>
 
   <!-- CONTENT -->
@@ -43,7 +45,7 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- EARTH FROM ORBIT -->
-  <div class="earth-section" aria-hidden="true"></div>
+  <div class="earth-section" style={`background-image: url('${b}/images/earth-bg.jpg')`} aria-hidden="true"></div>
 
   <Footer />
 </Layout>
@@ -59,7 +61,6 @@ import Footer from '../components/Footer.astro';
   .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('/images/investors-bg.jpg');
     background-size: cover;
     background-position: center;
   }
@@ -201,7 +202,6 @@ import Footer from '../components/Footer.astro';
   .earth-section {
     width: 100%;
     height: 480px;
-    background-image: url('/images/earth-bg.jpg');
     background-size: cover;
     background-position: center top;
   }
