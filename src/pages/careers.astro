@@ -31,14 +31,17 @@ const b = import.meta.env.BASE_URL.replace(/\/$/, '');
   </section>
 
   <!-- MORE THAN A COMPANY -->
-  <section class="content-section more-section">
-    <h2>MORE THAN<br />A COMPANY</h2>
-    <div class="more-body">
-      <p><strong>STARFLIGHT DYNAMICS</strong> is a community of dreamers, thinkers and doers.<br />
-      We are a team united by a common goal: to build the industries of the future in space.</p>
-      <p>Whether it's testing materials for space, operating cutting-edge facilities in orbit or developing new technologies, every project is a step towards a more innovative and sustainable future.</p>
-      <p class="green-cta">Join us and build the industry of tomorrow.</p>
+  <section class="more-section">
+    <div class="more-inner">
+      <h2>MORE THAN<br />A COMPANY</h2>
+      <div class="more-body">
+        <p><strong>STARFLIGHT DYNAMICS</strong> is a community of dreamers, thinkers and doers.<br />
+        We are a team united by a common goal: to build the industries of the future in space.</p>
+        <p>Whether it's testing materials for space, operating cutting-edge facilities in orbit or developing new technologies, every project is a step towards a more innovative and sustainable future.</p>
+        <p class="green-cta">Join us and build the industry of tomorrow.</p>
+      </div>
     </div>
+    <div class="accent-bar"></div>
   </section>
 
   <!-- GET ON BOARD -->
@@ -190,12 +193,29 @@ const b = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   /* MORE THAN A COMPANY */
   .more-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.5rem;
     background: var(--bg-card);
-    max-width: 100%;
     padding: 5rem clamp(2rem, 8vw, 8rem);
   }
+
+  .more-inner {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .more-inner h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
   .more-body {
-    max-width: 700px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
