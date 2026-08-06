@@ -31,8 +31,8 @@ const latestPosts = (await getCollection('news'))
     </div>
     <div class="hero-content">
       <img src={`${b}/images/astronaut.svg`} alt="" class="hero-astronaut" aria-hidden="true" />
-      <p class="hero-label">CURRENTLY UNDER CONSTRUCTION</p>
-      <p class="hero-label construction">SEE YOU UP THERE!</p>
+      <p class="hero-label">CURRENTLY UNDER</p>
+      <p class="hero-label green">CONSTRUCTION</p>
     </div>
   </section>
 
@@ -63,6 +63,7 @@ const latestPosts = (await getCollection('news'))
 
   <!-- ECOSYSTEM PARTNERS -->
   <section class="partners-section">
+    <p class="partners-heading">ECOSYSTEM <strong>PARTNERS</strong></p>
     <div class="partners-logos">
       <img src={`${b}/images/partners/bavairia.png`} alt="bavAIRia" />
       <img src={`${b}/images/partners/bdli.png`} alt="BDLI" />
@@ -100,8 +101,10 @@ const latestPosts = (await getCollection('news'))
     </div>
   </section>
 
-  <!-- EARTH FROM ORBIT (full-bleed visual before footer) -->
-  <div class="earth-section" style={`background-image: url('${b}/images/earth-bg.jpg')`} aria-hidden="true"></div>
+  <!-- EARTH FROM ORBIT -->
+  <div class="earth-section" style={`background-image: url('${b}/images/earth-bg.jpg')`}>
+    <p class="earth-tagline">SEE YOU <strong>UP THERE!</strong></p>
+  </div>
 
   <Footer />
 </Layout>
@@ -127,17 +130,12 @@ const latestPosts = (await getCollection('news'))
     inset: 0;
     width: 100%; height: 100%;
     object-fit: cover;
+    object-position: center bottom;
   }
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.35);
-  }
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.35);
+    background: rgba(0,0,0,0.25);
   }
 
   .hero-content {
@@ -166,7 +164,7 @@ const latestPosts = (await getCollection('news'))
     color: var(--text);
     text-transform: uppercase;
   }
-  .hero-label.construction { color: var(--accent); }
+  .hero-label.green { color: var(--accent); }
 
   /* NEWSLETTER */
   .newsletter-section {
@@ -265,6 +263,17 @@ const latestPosts = (await getCollection('news'))
     background: var(--bg);
     border-top: 1px solid var(--border);
   }
+
+  .partners-heading {
+    font-family: var(--font-head);
+    font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: var(--text);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .partners-heading strong { font-weight: 700; }
 
   .partners-logos {
     display: flex;
@@ -397,11 +406,26 @@ const latestPosts = (await getCollection('news'))
     .news-grid { grid-template-columns: 1fr; }
   }
 
-  /* EARTH FROM ORBIT — bg set via inline style */
+  /* EARTH FROM ORBIT */
   .earth-section {
     width: 100%;
-    height: 480px;
+    height: 600px;
     background-size: cover;
     background-position: center top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+  .earth-tagline {
+    font-family: var(--font-head);
+    font-size: clamp(2rem, 6vw, 5rem);
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.6);
+  }
+  .earth-tagline strong { font-weight: 700; }
 </style>
