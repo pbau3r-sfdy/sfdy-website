@@ -2,7 +2,7 @@
 title: "COMPANY ANNOUNCEMENT: SFDY has been selected for \"The Startup Lithuania Accelerator\" & establishes an entity in Lithuania"
 date: 2025-09-29
 summary: "Starflight Dynamics has been selected for the 5th Batch of the Startup Lithuania Accelerator and has established a new Lithuanian entity to advance our advanced materials work."
-image: "/images/news/startup-lithuania.jpg"
+image: "/images/news/startup-lithuania.png"
 ---
 
 We've been selected for the 5th Batch of "The Startup Lithuania Accelerator" powered by Plug and Play Tech Center - which is another huge success and important milestone for us!

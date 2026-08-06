@@ -2,7 +2,7 @@
 title: "COMPANY ANNOUNCEMENT: First ReaGAn milestone cleared!"
 date: 2025-11-04
 summary: "Our engineering teams have successfully passed the first technical milestone of the ReaGAn programme, validating key design choices and test results."
-image: "/images/news/reagan-milestone.jpeg"
+image: "/images/news/reagan-milestone.jpg"
 ---
 
 Last week, the engineering teams at STARFLIGHT DYNAMICS successfully passed the first technical milestone of the ReaGAn program.

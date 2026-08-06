@@ -2,7 +2,7 @@
 title: "Hello there, we have been missing you!"
 date: 2023-11-28
 summary: "STARFLIGHT DYNAMICS is coming out of stealth mode. We've been busy developing advanced technologies to open up the final frontier for productive industry."
-image: "/images/news/nov2023.png"
+image: "/images/news/hello-there.png"
 ---
 
 Dear Friends,
