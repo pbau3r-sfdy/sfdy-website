@@ -186,19 +186,15 @@ const latestPosts = (await getCollection('news'))
 
   .section-label {
     font-family: var(--font-head);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: #222;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: #111;
+    line-height: 1.2;
+    word-break: break-word;
   }
 
-  .newsletter-tagline {
-    font-family: var(--font-head);
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 700;
-    color: #111;
-    line-height: 1.15;
-  }
+  .newsletter-tagline { display: none; }
 
   .newsletter-right {
     flex: 1;
@@ -287,8 +283,7 @@ const latestPosts = (await getCollection('news'))
     height: 52px;
     width: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: 0.7;
+    opacity: 0.85;
     transition: opacity 0.2s;
   }
   .partners-logos img:hover { opacity: 1; }
